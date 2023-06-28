@@ -8,7 +8,7 @@ class Report
 
     int adno,i,total=0;
     char name[20];
-    float marks[5],averg=0;
+    float marks[5],averg;
 
     float Get_avg()
     {
@@ -106,17 +106,11 @@ class Report
       cout<<endl<<"total marks is : "<<total;
       cout<<endl<<"Averg marks is : [ "<<averg<<"]";
     }
-
-
 };
 
 int main()
 {
-
   Report studnet ;
 
-  studnet.READINFO();
-
-       
-
+   studnet.READINFO();
 }
