@@ -8,12 +8,11 @@ class Report
 
     int adno,i,total=0;
     char name[20];
-    float marks[5],averg=0,per;
+    float marks[5],averg=0;
 
     float Get_avg()
     {
         averg=total/5;
-        per=(total/500)*100;
     }  
 
 
@@ -106,8 +105,6 @@ class Report
 
       cout<<endl<<"total marks is : "<<total;
       cout<<endl<<"Averg marks is : [ "<<averg<<"]";
-      cout<<endl<<"Percentage    is : "<<per<<" %";
-
     }
 
 
