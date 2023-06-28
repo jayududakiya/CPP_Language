@@ -22,7 +22,7 @@ class Flight_number
       return 1100;
     }
 
-    else if(distance>2001)
+    else 
     {
        return 2200;
     }
