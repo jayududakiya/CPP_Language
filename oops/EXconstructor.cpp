@@ -10,7 +10,7 @@ class Tast
     cout<<"Defualt Constructor type call.... "<<endl;
    }
 
-   Tast(int a) //// using int dataType 
+   Tast(int a) // using int dataType 
    {
     cout<<"Perameterized Constructor type call.. A : "<<a<<endl;
    }
