@@ -24,7 +24,7 @@ class Test
 
   Test(char a)
   {
-    cout<<"Char of A  : "<<a<<endl;
+    cout<<"Char value of A  : "<<a<<endl;
   }
 };
 
