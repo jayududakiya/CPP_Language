@@ -41,5 +41,11 @@ int main()
 
     t.Area(10); //  area of Square 
 
+    t.Area(3.12);  // area of Circle
+
+    t.Area(10,50); // area of Rectangle
+
+    t.Area(3.12,10.1); // area of Triengale
+
 }
 
