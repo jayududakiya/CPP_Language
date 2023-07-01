@@ -30,5 +30,5 @@ class Test
 
 int main()
 {
-    Test t,a=21,b('J');
+    Test t,a(21),b('J');
 }
