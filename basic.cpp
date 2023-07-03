@@ -8,7 +8,7 @@ int main()
     
     int a,b;   
 
-    cout<<"\nEnter A :";  // std call for stand output
+    cout<<"\nEnter A :";  
     cin>>a;  // this is for used  for stor tha value in one veriable  cin>>a;
 
     cout<<"Enter B :";   // std call for stand output 
