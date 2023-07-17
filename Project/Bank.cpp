@@ -13,13 +13,13 @@ public:
     int Deposit()
     {
       cout<<"Enter Yout deposit Amount : ";cin>>depo;
-      balance=depo+balance;
+      return balance=depo+balance;
     }
 
     int withdrawal()
     {
       cout<<"Enter  your withdrawal Amount : ";cin>>withd;
-      balance = balance - withd;
+      return balance = balance - withd;
     }
 
     void show_Balance()
