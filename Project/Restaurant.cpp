@@ -52,8 +52,8 @@ class menu_items : public Carnival_resto
       double  Bill_Amt =0  , Disc  ;
       int Total =0 , i;
 
-      string AItems[5] , PItems[5] , PaItems[5] , DItems[5] , SaItems[5] ;
-      int IQuty1[5] ={0,0,0,0,0}, IQuty2[5]={0,0,0,0,0} , IQuty3[5]={0,0,0,0,0} , IQuty4[5]={0,0,0,0,0} , IQuty5[5]={0,0,0,0,0} ;
+      string NItems[25];
+      int IQuty[25] ={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
    
     public: 
  
@@ -110,19 +110,21 @@ class menu_items : public Carnival_resto
 
 
 
- void main_mnue_items()
+ void main_menu()
   {
 
     while(choice!=0 && order!=0)    
     { 
       
       cout<<"\n\n \t\t\t\t\t\t==========|*| MENU |*|========== \n\n";
-      cout<<"\n \t\t\t\t\t\t [1] Indian on the go"; //
-      cout<<"\n \t\t\t\t\t\t [2] Pizza   "; //
+      cout<<"\n \t\t\t\t\t\t [1] Indian Food";
+      cout<<"\n \t\t\t\t\t\t [2] Pizza   "; 
       cout<<"\n \t\t\t\t\t\t [3] Pasta   ";
       cout<<"\n \t\t\t\t\t\t [4] Drinks  ";
       cout<<"\n \t\t\t\t\t\t [5] Dessert \n";
-      cout<<"\n \t\t\t\t\t\t EXIT    [0] \n";
+      cout<<"\n \t\t\t\t\t\t EXIT [9] \n";
+      cout<<"\n \t\t\t\t\t\t Confirm order [0] \n";
+      
       cout<<"\n \t\t\t\tEnter choice : ";
       cin>>choice;
         switch (choice)
@@ -148,7 +150,13 @@ class menu_items : public Carnival_resto
           break;
 
           case 0: 
+            order=0;
           break;
+
+          case 9: 
+            Bill=0;
+            order=0;
+            break; 
         }
     }
     
@@ -180,65 +188,62 @@ class menu_items : public Carnival_resto
            case 1: 
                 cout<<"\t\t\t\t How Many Fried Rice : ";
                 cin>>Quty;
-                IQuty1[0]+=Quty;
+                IQuty[0]+=Quty;
                 Bill = Bill + Quty*360;
-                AItems[0] = "Fried  Rice";
+                NItems[0] = "Fried  Rice";
             break;
 
             case 2: 
                 cout<<"\t\t\t\t How Many Mysore Dosa : ";
                 cin>>Quty;
-                IQuty1[1]+=Quty;
+                IQuty[1]+=Quty;
                 Bill = Bill + Quty*260;
-                AItems[1] = " Mysore Dosa ";
+                NItems[1] = " Mysore Dosa ";
             break;
 
             case 3: 
                 cout<<"\t\t\t\t How Many Hakka Noodles : ";
                 cin>>Quty;
-                IQuty1[2]+=Quty;
+                IQuty[2]+=Quty;
                 Bill = Bill + Quty*360;
-                AItems[2] = " Hakka Noodles  ";
+                NItems[2] = " Hakka Noodles  ";
             break;
 
             case 4: 
                 cout<<"\t\t\t\t How Many Pav bhaji : ";
                 cin>>Quty;
-                IQuty1[3]+=Quty;
+                IQuty[3]+=Quty;
                 Bill = Bill + Quty*280;
-                AItems[3] = "  Pav bhaji ";
+                NItems[3] = "  Pav bhaji ";
             break;
 
             case 5: 
                 cout<<"\t\t\t\t How Many Rasgulla : ";
                 cin>>Quty;
-                IQuty1[4]+=Quty;
+                IQuty[4]+=Quty;
                 Bill = Bill + Quty*180;
-                AItems[4] = " Rasgulla ";
+                NItems[4] = " Rasgulla ";
             break; 
+
+            case 0 : order=0; break;
              
              case 8:
-                 Bill=0;
-                for(i=0;i<5;i++)
-                {
-                  AItems[i]="";
-                  IQuty1[i]=0;
-                  if(IQuty1[i]>0)
-                  {
-                    IQuty1[i]=0;
-                  }
-                }
+                Bill=0;
+                Cancel_order();
                 char ch;
                  cout<<"\n\t\t\t\t __________| |        Youe Order Is Cancel Now          | |____________ \n";
                  cout<<"\n\t\t\t\t __________| |   What else do you want to order? Y/N    | |____________ \n";cin>>ch;
-                 if(ch=='Y'||ch=='y') main_mnue_items();
+                 if(ch=='Y'||ch=='y') main_menu();
                  else if(ch=='N'||ch=='n') order=0;
               break;
-            case 9 : main_mnue_items(); break;
+
+             case 9 : main_menu(); break;
+
+             
 
            }
 
-        }while (order!=0);
+        }while(order!=0);
 
     }// end first function 
 
@@ -267,62 +272,59 @@ class menu_items : public Carnival_resto
            case 1: 
                 cout<<"\t\t\t\t How Many Piazz : ";
                 cin>>Quty;
-                IQuty2[0]+=Quty;
+                IQuty[5]+=Quty;
                 Bill = Bill + Quty*425;
-                PItems[0] = "  Margherita Pizza ";
+                NItems[5] = "  Margherita Pizza ";
             break;
 
             case 2: 
-                cout<<"\t\t\t\t How Many Piazz : ";
+                cout<<"\t\t\t\t How Many Pizza : ";
                 cin>>Quty;
-                IQuty2[1]+=Quty;
+                IQuty[6]+=Quty;
                 Bill = Bill + Quty*450;
-                PItems[1] = " Four Seasons Pizza ";
+                NItems[6] = " Four Seasons Pizza ";
             break;
 
             case 3: 
-                cout<<"\t\t\t\t How Many Piazz : ";
+                cout<<"\t\t\t\t How Many Pizza : ";
                 cin>>Quty;
-                IQuty2[2]+=Quty;
+                IQuty[7]+=Quty;
                 Bill = Bill + Quty*360;
-                PItems[2] = " Oriental Pizza ";
+                NItems[7] = " Oriental Pizza ";
             break;
 
             case 4: 
-                cout<<"\t\t\t\t How Many Piazz : ";
+                cout<<"\t\t\t\t How Many Pizza : ";
                 cin>>Quty;
-                IQuty2[3]+=Quty;
+                IQuty[8]+=Quty;
                 Bill = Bill + Quty*480;
-                PItems[3] = " Indienne Pizza ";
+                NItems[8] = " Indienne Pizza ";
             break;
 
             case 5: 
-                cout<<"\t\t\t\t How Many Piazz : ";
+                cout<<"\t\t\t\t How Many Pizza : ";
                 cin>>Quty;
-                IQuty2[4]+=Quty;
+                IQuty[9]+=Quty;
                 Bill = Bill + Quty*380;
-                PItems[4] = " Verduras Pizza ";
+                NItems[9] = " Verduras Pizza ";
             break;
 
+             case 0 : order=0; break;
+
              case 8:
-                 Bill=0;
-                for(i=0;i<5;i++)
-                {
-                  PItems[i]="";
-                  IQuty2[i]=0;
-                  if(IQuty2[i]>0)
-                  {
-                    IQuty2[i]=0;
-                  }
-                }
+               Bill=0;
+                Cancel_order();
                 char ch;
                  cout<<"\n\t\t\t\t __________| |        Youe Order Is Cancel Now          | |____________ \n";
                  cout<<"\n\t\t\t\t __________| |   What else do you want to order? Y/N    | |____________ \n";cin>>ch;
-                 if(ch=='Y'||ch=='y') main_mnue_items();
+                 if(ch=='Y'||ch=='y')
+                 {
+                  main_menu();
+                 } 
                  else if(ch=='N'||ch=='n') order=0;
               break;
            
-            case 9 : main_mnue_items(); break; 
+            case 9 : main_menu(); break; 
 
            }
 
@@ -352,62 +354,56 @@ class menu_items : public Carnival_resto
            case 1: 
                 cout<<"\t\t\t\tHow Much Pasta : ";
                 cin>>Quty;
-                IQuty3[0]+=Quty;
+                IQuty[10]+=Quty;
                 Bill = Bill + Quty*125;
-                PaItems[0] = " Arabiata Pasta  ";
+                NItems[10] = " Arabiata Pasta  ";
             break;
 
             case 2: 
                 cout<<"\t\t\t\tHow Much Pasta : ";
                 cin>>Quty;
-                IQuty3[1]+=Quty;
+                IQuty[11]+=Quty;
                 Bill = Bill + Quty*150;
-                PaItems[1] = " Aglo Olio Pasta ";
+                NItems[11] = " Aglo Olio Pasta ";
             break;
 
             case 3: 
                 cout<<"\t\t\t\tHow Much Pasta : ";
                 cin>>Quty;
-                IQuty3[2]+=Quty;
+                IQuty[12]+=Quty;
                 Bill = Bill + Quty*160;
-                PaItems[2] = " Quatro Formaggio Pasta ";
+                NItems[12] = " Quatro Formaggio Pasta ";
             break;
 
             case 4: 
                 cout<<"\t\t\t\tHow Much Pasta : ";
                 cin>>Quty;
-                IQuty3[3]+=Quty;
+                IQuty[13]+=Quty;
                 Bill = Bill + Quty*280;
-                PaItems[3] = " Pesto Pepper Pasta ";
+                NItems[13] = " Pesto Pepper Pasta ";
             break;
 
             case 5: 
                 cout<<"\t\t\t\tHow Much Pasta : ";
                 cin>>Quty;
-                IQuty3[4]+=Quty;
+                IQuty[14]+=Quty;
                 Bill = Bill + Quty*180;
-                PaItems[4] = " Cheese Pasta ";
+                NItems[14] = " Cheese Pasta ";
             break;
 
+              case 0 : order=0; break;
+
              case 8:
-                 Bill=0;
-                for(i=0;i<5;i++)
-                {
-                  PaItems[i]="";
-                  IQuty3[i]=0;
-                  if(IQuty3[i]>0)
-                  {
-                    IQuty3[i]=0;
-                  }
-                }
+                Bill=0;
+                Cancel_order();
                 char ch;
-                 cout<<"\n\t\t\t\t __________| |        Youe Order Is Cancel Now          | |____________ \n";
+                 cout<<"\n\t\t\t\t __________| |   Youe all Item Order Is Cancel Now      | |____________ \n";
                  cout<<"\n\t\t\t\t __________| |   What else do you want to order? Y/N    | |____________ \n";cin>>ch;
-                 if(ch=='Y'||ch=='y') main_mnue_items();
+                 if(ch=='Y'||ch=='y') main_menu();
                  else if(ch=='N'||ch=='n') order=0;
               break;
            
-            case 9 : main_mnue_items(); break; 
+            case 9 : main_menu(); break; 
            }
 
         }while (order!=0);
@@ -437,62 +433,56 @@ class menu_items : public Carnival_resto
            case 1: 
                 cout<<"\t\t\t\t How Many Cups : ";
                 cin>>Quty;
-                IQuty4[0]+=Quty;
+                IQuty[15]+=Quty;
                 Bill = Bill + Quty*250;
-                DItems[0] = " Cold Coffee  ";
+                NItems[15] = " Cold Coffee  ";
             break;
 
             case 2: 
                 cout<<"\t\t\t\t How Many Glass : ";
                 cin>>Quty;
-                IQuty4[1]+=Quty;
+                IQuty[16]+=Quty;
                 Bill = Bill + Quty*250;
-                DItems[1] = "Fresh Fruit Juice";
+                NItems[16] = "Fresh Fruit Juice";
             break;
 
             case 3: 
                 cout<<"\t\t\t\t How Many Glass : ";
                 cin>>Quty;
-                IQuty4[2]+=Quty;
+                IQuty[17]+=Quty;
                 Bill = Bill + Quty*150;
-                DItems[2] = " Fresh Lime Soda ";
+                NItems[17] = " Fresh Lime Soda ";
             break;
 
             case 4: 
                 cout<<"\t\t\t\t How Many Glass : ";
                 cin>>Quty;
-                IQuty4[3]+=Quty;
+                IQuty[18]+=Quty;
                 Bill = Bill + Quty*100;
-                DItems[3] = " Masala Chaas Lassi ";
+                NItems[18] = " Masala Chaas Lassi ";
             break;
 
             case 5: 
                 cout<<"\t\t\t\t How Many Cans : ";
                 cin>>Quty;
-                IQuty4[4]+=Quty;
+                IQuty[19]+=Quty;
                 Bill = Bill + Quty*170;
-                DItems[4] = "Energy Drink (250 ml)";
+                NItems[19] = "Energy Drink (250 ml)";
             break;
+               
+             case 0 : order=0; break;
 
              case 8:
-                 Bill=0;
-                for(i=0;i<5;i++)
-                {
-                  DItems[i]="";
-                  IQuty4[i]=0;
-                  if(IQuty4[i]>0)
-                  {
-                    IQuty4[i]=0;
-                  }
-                }
+                Bill=0;
+                Cancel_order();
                 char ch;
                  cout<<"\n\t\t\t\t __________| |        Youe Order Is Cancel Now          | |____________ \n";
                  cout<<"\n\t\t\t\t __________| |   What else do you want to order? Y/N    | |____________ \n";cin>>ch;
-                 if(ch=='Y'||ch=='y') main_mnue_items();
+                 if(ch=='Y'||ch=='y') main_menu();
                  else if(ch=='N'||ch=='n') order=0;
               break;
            
-            case 9 : main_mnue_items(); break; 
+            case 9 : main_menu(); break; 
 
            }
 
@@ -522,62 +512,56 @@ class menu_items : public Carnival_resto
            case 1: 
                 cout<<"\t\t\t\t How Many Cups  : ";
                 cin>>Quty;
-                IQuty5[0]+=Quty;
+                IQuty[20]+=Quty;
                 Bill = Bill + Quty*150;
-                SaItems[0] = " Mint Ice Cream ";
+                NItems[20] = " Mint Ice Cream ";
             break;
 
             case 2: 
                 cout<<"\t\t\t\t How Many kulfi : ";
                 cin>>Quty;
-                IQuty5[1]+=Quty;
+                IQuty[21]+=Quty;
                 Bill = Bill + Quty*100;
-                SaItems[1] = " Malai kulfi ";
+                NItems[21] = " Malai kulfi ";
             break;
 
             case 3: 
                 cout<<"\t\t\t\t How Many kulfi : ";
                 cin>>Quty;
-                IQuty5[2]+=Quty;
+                IQuty[22]+=Quty;
                 Bill = Bill + Quty*100;
-                SaItems[2] = "Mango kulfi  ";
+                NItems[22] = "Mango kulfi  ";
             break;
 
             case 4: 
                 cout<<"\t\t\t\t How Many Sizzling Brownie : ";
                 cin>>Quty;
-                IQuty5[3]+=Quty;
+                IQuty[23]+=Quty;
                 Bill = Bill + Quty*170;
-                SaItems[3] = "  Sizzling Brownie ";
+                NItems[23] = "  Sizzling Brownie ";
             break;
 
             case 5: 
                 cout<<"\t\t\t\t How Many Cups  : ";
                 cin>>Quty;
-                IQuty5[4]+=Quty;
+                IQuty[24]+=Quty;
                 Bill = Bill + Quty*180;
-                SaItems[4] = " Green Apple Ice Cream ";
+                NItems[4] = " Green Apple Ice Cream ";
             break;
+              
+              case 0 : order=0; break;
 
              case 8:
-                 Bill=0;
-                for(i=0;i<5;i++)
-                {
-                  SaItems[i]="";
-                  IQuty5[i]=0;
-                  if(IQuty5[i]>0)
-                  {
-                    IQuty5[i]=0;
-                  }
-                }
+                Bill=0;
+                Cancel_order();
                 char ch;
                  cout<<"\n\t\t\t\t __________| |        Youe Order Is Cancel Now          | |____________ \n";
                  cout<<"\n\t\t\t\t __________| |   What else do you want to order? Y/N    | |____________ \n";cin>>ch;
-                 if(ch=='Y'||ch=='y') main_mnue_items();
+                 if(ch=='Y'||ch=='y') main_menu();
                  else if(ch=='N'||ch=='n') order=0;
               break;
            
-            case 9 : main_mnue_items(); break; 
+            case 9 : main_menu(); break; 
 
            }
 
@@ -590,37 +574,25 @@ class menu_items : public Carnival_resto
 
 void show_bill_Items()
 {
-  for (i=0;i<5;i++)
+  for (i=0;i<25;i++)
         {
-            if (!AItems[i].empty())
-            cout<<"\n \t\t\t : > " <<AItems[i]<<": \t\t ( "<<IQuty1[i]<<" )";
+            if (!NItems[i].empty())
+            cout<<"\n \t\t\t : > " <<NItems[i]<<" \t\t ( "<<IQuty[i]<<" )";
         }
-
-   for (i=0;i<5;i++)
-        {   
-             if (!PItems[i].empty())
-            cout<<"\n \t\t\t : > " <<PItems[i]<<": \t\t ( "<<IQuty2[i]<<" )";
-        }
-
-   for (i=0;i<5;i++)
-        {
-            if (!PaItems[i].empty())
-            cout<<"\n \t\t\t : > " <<PaItems[i]<<": \t\t ( "<<IQuty3[i]<<" )";
-        }
-
-    for (i=0;i<5;i++)
-        {
-             if (!DItems[i].empty())
-            cout<<"\n \t\t\t : > " <<DItems[i]<<": \t\t ( "<<IQuty4[i]<<" )";
-        }
-
-    for (i=0;i<5;i++)
-        {
-             if (!SaItems[i].empty())
-            cout<<"\n \t\t\t : > " <<SaItems[i]<<": \t\t ( "<<IQuty5[i]<<" )";
-        }
-
        cout<<endl; 
+}
+
+
+void Cancel_order()
+{
+   for(i=0;i<25;i++)
+    {
+      if(IQuty[i]>0)
+      {
+        NItems[i]="";
+        IQuty[i]=0;
+      }
+    }
 }
 
 // =======================================================
@@ -634,7 +606,7 @@ int main ()
 
     R.Get_customer_info();
      
-            R.main_mnue_items();
+            R.main_menu();
             R.Dis_customer_info();
             R.show_bill_Items();
             R.Show_bill();
