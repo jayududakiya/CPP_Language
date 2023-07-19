@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/class/SQ_Class/C++ Programs/Project",
-      "program": "d:/class/SQ_Class/C++ Programs/Project/build/Debug/outDebug",
+      "cwd": "d:/SQ_Class/C++ Programs/Project",
+      "program": "d:/SQ_Class/C++ Programs/Project/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
